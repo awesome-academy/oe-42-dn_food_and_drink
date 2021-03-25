@@ -1332,7 +1332,7 @@ blockquote {
     background: #d65106;
 }
 
-.category-box{
+.category-box .item-box{
 	padding: 70px 0px;
 }
 

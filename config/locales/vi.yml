@@ -22,3 +22,12 @@ vi:
     name_cate: "Tên danh mục "
     add_cate_success: "Thêm danh mục thành công"
     add_cate_fail: "Thêm danh mục không thành công"
+    no_cate: "danh mục trống. xin vui lòng thêm danh mục mới!"
+
+  item:
+    new_item: "Thêm mặt hàng mới"
+    create_item: "Tạo mặt hàng mới"
+    create_success: "Tạo thành công"
+    create_fail: "Tạo không thành công"
+    image_1: "phải là một định dạng hình ảnh hợp lệ"
+    image_2: "phải nhỏ hơn 5MB"
