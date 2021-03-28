@@ -1,4 +1,5 @@
 en:
+  welcome: "Welcome to restaurant!!!"
   signup: "Signup"
   login: "Log In"
   login_facebook: "Log in with facebook"
@@ -15,10 +16,45 @@ en:
   cart: "Cart"
   menu: "Menu"
   new_user?: "New account?"
-  
+
   category:
     add_cate: "Add new categories"
     create_cate: "Add category"
     name_cate: "Name category"
     add_cate_success: "Add category success"
     add_cate_fail: "Add category fail"
+    no_cate: "category empty. please add new category!"
+
+  item:
+    new_item: "Add new Item"
+    create_item: "Create new Item"
+    create_success: "Create success"
+    create_fail: "Create fail"
+    image_1: "must be a valid image format"
+    image_2: "should be less than 5MB"
+    dola: "$"
+    no_result_with_cate: "No item with this category"
+    no_result: "No result with key search"
+    detail_item: "Detail Item"
+    name: "Name item : "
+    price: "Price : "
+    description: "Description"
+    status: "Status"
+    quantity: "Quantity"
+
+  navigate:
+    all: "All"
+    drink: "Drinks"
+    lunch: "Lunch"
+    breakfast: "Breakfast"
+  cart:
+    remove: "Remove"
+    product: "Product"
+    quantity: "Quantity"
+    price: "Price"
+    action: "Action"
+    sub_total: "Sub-Total"
+    shipping: "Shipping"
+    total: "Total"
+    continue: "Continue"
+    checkout: "Checkout"

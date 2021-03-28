@@ -1,0 +1,62 @@
+<br>
+<!-- Start item details -->
+<div class="item-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="heading-title text-center">
+          <h2><%= t "item.detail_item" %></h2>
+          <p><%= t "welcome" %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-12">
+        <div class="item-inner-details-page">
+          <div class="item-inner-box">
+            <div class="side-item-img">
+              <%= image_tag @item.display_image if @item.image.attached? %>
+            </div>
+            <div class="inner-item-detail details-page">
+              <h3><%=  t "item.name" %><%= @item.name %></h3>
+              <h4><%= t "item.price" %><%= @item.price %> $ </h4>
+              <h4><%= t "item.description" %></h4>
+              <blockquote>
+                <h4><%= @item.description %></h4>
+              </blockquote>
+              <h4><%= t "item.status" %><%= @item.status %></h4>
+              <h4><%= t "item.quantity" %><%= @item.quantity %></h4>
+              <br>
+              <div class="col-sm-12 col-md-6 text-right">
+                <button class="btn btn-lg btn-block btn-success text-uppercase">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <%= render "layouts/comment" %>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 item-sidebar">
+            <div class="right-side-item">
+              <h3>Same Product</h3>
+                <div class="post-box-item">
+                  <div class="recent-post-box">
+                    <%= render "same_item" %>
+                  </div>
+                </div>
+                <h3>Recent Tag</h3>
+                <div class="item-tag-box">
+                  <ul class="list-inline tag-list">
+                    <li class="list-inline-item"><a href="#">Food</a></li>
+                    <li class="list-inline-item"><a href="#">Drink</a></li>
+                    <li class="list-inline-item"><a href="#">Nature</a></li>
+                    <li class="list-inline-item"><a href="#">Italian</a></li>
+                    <li class="list-inline-item"><a href="#">Bootstrap4</a></li>
+                    <li class="list-inline-item"><a href="#">Fashion</a></li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        <!-- End details -->
