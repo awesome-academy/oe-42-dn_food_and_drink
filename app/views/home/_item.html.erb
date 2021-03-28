@@ -1,0 +1,19 @@
+<% @items.each do |item| %>
+  <div class="col-md-4 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <%= image_tag item.display_image if item.image.attached? %>
+      </div>
+      <div class="team-content">
+        <h3 class="title"><%= item.name %></h3>
+        <span class="post"><%= t "item.dola" %><%= item.price %></span>
+        <div class="">
+            <%= link_to t("item.detail"), detail_path(:id => item.id, :same_cate => item.category_id),class: "btn btn-block btn-warning" %>
+        </div>
+        <div class="">
+          <%= link_to t("item.add_to_cart"), detail_orders_path(:item_id => item.id), method: :post, class: "btn btn-block btn-success"%>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

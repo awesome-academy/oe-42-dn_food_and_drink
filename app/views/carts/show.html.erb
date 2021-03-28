@@ -1,0 +1,46 @@
+<br>
+<br>
+<br>
+<br>
+<h1 class="cart"><%= t "cart" %></h1>
+<div class="container mb-4" id="cart-box">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col"><%= t "carts.product" %></th>
+                            <th scope="col"><%= t "carts.price" %></th>
+                            <th scope="col" class=""><%= t "carts.quantity" %></th>
+                            <th scope="col" class=""><%= t "carts.action" %></th>
+                            <th scope="col" class="text-right"><%= t "carts.sub_total" %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%= render "line_item" %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong><%= t "carts.total" %></strong></td>
+                            <td class="text-right"><strong><%= @cart.sub_total %> <%= t("item.dola") %></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                  <%= link_to t("carts.continue"), root_path, class: "btn btn-block btn-warning" %>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block btn-success text-uppercase"><%= t "carts.checkout" %></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

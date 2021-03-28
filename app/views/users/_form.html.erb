@@ -3,19 +3,19 @@
   <div class="left">
     <h1><%= yield(:page_name) %></h1>
     <%= f.label :name %>
-    <%= f.text_field :name, type: "text" %>
+    <%= f.text_field :name, type: "text-text" %>
     <%= f.label :email %>
-    <%= f.email_field :email, type: "text" %>
+    <%= f.email_field :email, type: "text-text" %>
     <%= f.label :phone %>
-    <%= f.text_field :phone, type: "text" %>
+    <%= f.text_field :phone, type: "text-text" %>
     <%= f.label :address %>
-    <%= f.text_field :address, type: "text" %>
+    <%= f.text_field :address, type: "text-text" %>
     <%= f.label :password %>
     <%= f.password_field :password, type: "password" %>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, type: "password" %>
 
-    <%= f.submit yield(:button_text), class: "btn btn-primary", type: "submit" %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary submit-signup", type: "submit-signup" %>
   </div>
   <div class="right">
     <button class="social-signin facebook"><%= t "login_facebook" %></button>

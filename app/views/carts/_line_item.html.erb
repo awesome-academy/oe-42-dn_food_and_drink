@@ -1,0 +1,26 @@
+<% @cart.detail_orders.each do |line_item| %>
+<tr>
+    <td>
+      <div class="recent-img">
+        <%= image_tag line_item.item.display_image_same_item if line_item.item.image.attached? %>
+      </div>
+    </td>
+    <td class=""><%= line_item.item.name %></td>
+    <td class=""><%= line_item.item.price %> <%= t("item.dola") %></td>
+    <%= form_with url: detail_order_update_path, method: :post, remote: true do |f| %>
+    <td class="">
+      <div class="input-group">
+        <%= f.number_field :quantity, value: line_item.quantity, class: "form-control", :min => 1 %>
+         <%= f.hidden_field :item_id, value: line_item.item.id %>
+      </div>
+    </td>
+    <td class="">
+      <div class="">
+        <%= f.submit t("carts.update"), class: "btn btn-sm btn-info" %>
+        <%= link_to t("carts.remove"), detail_order_path(line_item), method: :delete, class: "btn btn-sm btn-danger" %>
+      </div>
+    </td>
+    <% end %>
+    <td class="text-right"><%= line_item.total_price %> <%= t("item.dola") %></td>
+</tr>
+<% end %>

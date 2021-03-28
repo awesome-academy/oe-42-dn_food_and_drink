@@ -726,8 +726,8 @@ button:focus{
     padding: 0 10px;
     float: left;
     width: 100%;
-	border: none;
-	cursor: pointer;
+  	border: none;
+	  cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
 .subscribe_form .submit:hover{
@@ -869,8 +869,8 @@ button:focus{
 .our-team .social li{ display: inline-block; }
 .our-team .social li a{
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     line-height: 40px;
     font-size: 20px;
     color: #fff;
@@ -1332,7 +1332,7 @@ blockquote {
     background: #d65106;
 }
 
-.category-box{
+.category-box .item-box{
 	padding: 70px 0px;
 }
 
