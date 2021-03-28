@@ -1,3 +1,6 @@
 user:
   email:
     size: 50
+item:
+  image:
+    default: 700
