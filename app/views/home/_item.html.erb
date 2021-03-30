@@ -1,0 +1,16 @@
+<% @items.each do |item| %>
+  <div class="col-md-4 col-sm-6">
+    <div class="our-team">
+      <div class="pic">
+        <%= image_tag item.display_image if item.image.attached? %>
+        <ul class="social">
+          <li><a href="#" class="fa fa-linkedin"><%= t "cart" %></a></li>
+        </ul>
+      </div>
+      <div class="team-content">
+        <h3 class="title"><%= item.name %></h3>
+        <span class="post"><%= t "item.dola" %><%= item.price %></span>
+      </div>
+    </div>
+  </div>
+<% end %>

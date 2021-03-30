@@ -1,4 +1,5 @@
 vi:
+  welcome: "Chào mừng đến với nhà hàng!!!"
   signup: "Đăng ký"
   login: "Đăng Nhập"
   login_facebook: "Đăng Nhập Bằng facebook"
@@ -22,3 +23,21 @@ vi:
     name_cate: "Tên danh mục "
     add_cate_success: "Thêm danh mục thành công"
     add_cate_fail: "Thêm danh mục không thành công"
+    no_cate: "danh mục trống. xin vui lòng thêm danh mục mới!"
+
+  item:
+    new_item: "Thêm mặt hàng mới"
+    create_item: "Tạo mặt hàng mới"
+    create_success: "Tạo thành công"
+    create_fail: "Tạo không thành công"
+    image_1: "phải là một định dạng hình ảnh hợp lệ"
+    image_2: "phải nhỏ hơn 5MB"
+    dola: "$"
+    no_result_with_cate: "Không có mặt hàng nào trong danh mục này"
+    no_result: "Không có mặt hàng nào với từ khóa này"
+
+  navigate:
+    all: "Tất cả"
+    drink: "Đồ uống"
+    lunch: "Bữa trưa"
+    breakfast: "Bữa sáng"
