@@ -1,0 +1,10 @@
+<% @item_same_cate.each do |recent_item| %>
+  <div class="recent-box-item">
+    <div class="recent-img">
+      <%= image_tag recent_item.display_image_same_item if recent_item.image.attached? %>
+    </div>
+    <div class="recent-info">
+      <h4><%= recent_item.name %></h4>
+    </div>
+  </div>
+<% end %>

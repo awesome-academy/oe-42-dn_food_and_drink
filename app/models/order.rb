@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
-  has_many :order_details, dependent: :destroy
-  belongs_to :user
+  has_many :detail_orders, dependent: :destroy
+  belongs_to :user, optional: true
 end

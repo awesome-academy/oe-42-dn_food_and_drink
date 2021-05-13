@@ -1,0 +1,14 @@
+<% @cart.detail_orders.each do |line_item| %>
+<tr>
+    <td>
+      <div class="recent-img">
+        <%= image_tag line_item.item.display_image_same_item if line_item.item.image.attached? %>
+      </div>
+    </td>
+    <td class=""><%= line_item.item.name %></td>
+    <td class=""><%= line_item.item.price %> <%= t("item.dola") %></td>
+    <td class="text-center"><%= line_item.quantity %></td>
+    <td><%= line_item.total_price %> <%= t("item.dola") %></td>
+    <td class="text-right"><%= link_to t("carts.remove"), detail_order_path(line_item), method: :delete, class: "btn btn-sm btn-danger" %> </td>
+</tr>
+<% end %>

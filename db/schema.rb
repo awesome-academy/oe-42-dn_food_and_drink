@@ -10,7 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_124518) do
+ActiveRecord::Schema.define(version: 2021_03_26_061945) do
+
+  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "carts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "id_parent"
@@ -20,8 +53,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_124518) do
   end
 
   create_table "detail_orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "item_id", null: false
+    t.bigint "order_id"
+    t.bigint "item_id"
     t.integer "quantity"
     t.decimal "price", precision: 10
     t.decimal "amount", precision: 10
@@ -29,12 +62,13 @@ ActiveRecord::Schema.define(version: 2021_03_16_124518) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "cart_id"
     t.index ["item_id"], name: "index_detail_orders_on_item_id"
     t.index ["order_id"], name: "index_detail_orders_on_order_id"
   end
 
   create_table "items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.string "name"
     t.decimal "price", precision: 10
     t.string "image"
@@ -48,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_124518) do
   end
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "user_name"
     t.string "user_phone"
     t.string "user_address"
@@ -61,8 +95,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_124518) do
   end
 
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "item_id"
+    t.bigint "user_id"
     t.string "title"
     t.text "body"
     t.integer "rating"
@@ -92,6 +126,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_124518) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "detail_orders", "items"
   add_foreign_key "detail_orders", "orders"
   add_foreign_key "items", "categories"
